@@ -1,0 +1,42 @@
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active"><a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Detalles unidad tributaria</a></li>
+		   	
+		   	<li role="presentation">
+				<div class="input-group input-group-lg">
+					<input class="form-control" type="text" id="searchUt" placeholder="Buscar unidad tributaria">
+				</div>
+			</li>
+		   	<li role="presentation" class="dropdown"><a href="" class="dropdown-toggle" id="options" data-toggle="dropdown" aria-controls="options-contents" aria-expanded="false">Opciones <span class="caret"></span></a>
+				<ul class="dropdown-menu" aria-labelbody="options" id="options-contents">
+					<li>
+						<a href="#" onclick="nuevaUt();" title="Crear unidad tributaria">Nuevo unidad tributaria</a>							
+	    			</li>
+				</ul>
+			</li>
+		  </ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="detalle">
+			    	
+	    		<table class="table table-striped" id="tablaUt">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Valor unidad tributaria</th>
+		    			<th>Año</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($uts); $i++){ $rs = $uts[$i]; ?>
+		    		<tr>
+		    			<td><?php echo $rs['id_ut']; ?></td>
+		    			<td><?php echo $rs['ut']; ?></td>
+		    			<td><?php echo $rs['anio']; ?></td>
+		    			<td>
+		    				<a href="#" onclick="editUt(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="#" onclick="delUt(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr> <?php } ?>
+		    	</table>
+		    </div>
+		  </div>

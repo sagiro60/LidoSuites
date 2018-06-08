@@ -1,0 +1,43 @@
+		<ul class="nav nav-tabs nav-justified">
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs" role="tablist">
+		    <li role="presentation" class="active"><a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Detalles apartamentos</a></li>
+		   	
+		   	<li role="presentation">
+				<div class="input-group input-group-lg">
+					<input class="form-control" type="text" id="searchApartamento" placeholder="Buscar apartamentos">
+				</div>
+			</li>
+		   	<li role="presentation" class="dropdown"><a href="" class="dropdown-toggle" id="options" data-toggle="dropdown" aria-controls="options-contents" aria-expanded="false">Opciones <span class="caret"></span></a>
+				<ul class="dropdown-menu" aria-labelbody="options" id="options-contents">
+					<li>					
+						<a href="#" onclick="nuevoApartamento()" title="Crear proyecto">Nuevo apartamento</a>						
+	    			</li>
+				</ul>
+			</li>
+		  </ul>
+		  <!-- Tab panes -->
+		  <div class="tab-content">
+		    <div role="tabpanel" class="tab-pane active" id="detalle">
+				<table class="table table-striped" id="tablaApartamento">
+		    		<tr>
+		    			<th>Id</th>
+		    			<th>Alicouta</th>
+		    			<th>Nombre</th>
+		    			<th>Saldo</th>
+		    			<th>Opciones</th>
+		    		</tr>
+		    		<?php for($i=0; $i<count($apartamentos); $i++){ $rs = $apartamentos[$i]; ?>
+		    		<tr>
+		    			<td><?php echo $rs['id_apartamento']; ?></td>
+		    			<td><?php echo $rs['alicuota']; ?></td>
+		    			<td><?php echo $rs['nombre']; ?></td>
+		    			<td><?php echo $rs['saldo']; ?></td>
+		    			<td>
+		    				<a href="#" onclick="editApartamento(this);" ><i class="glyphicon glyphicon-edit"></i></a>
+		    				<a href="#" onclick="delApartamento(this);" ><i class="glyphicon glyphicon-trash"></i></a>
+		    			</td>
+		    		</tr> <?php } ?>
+		    	</table>
+		    </div>
+		  </div>
