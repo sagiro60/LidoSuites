@@ -64,6 +64,8 @@
 <?php require_once '../views/notificacion/nuevo.phtml'; ?>
 <?php require_once '../views/notificacion/editar.phtml'; ?>
 <?php require_once '../views/pagos/editar.phtml'; ?>
+
+<?php require_once '../views/cuenta/pagar.phtml'; ?>
 <!-- <span ng-include="'views/usuarios/nuevo.phtml'"></span>
 <span ng-include="'views/usuarios/editar.phtml'"></span>
 
@@ -246,6 +248,9 @@
 			}else if(isset($_GET['cuenta'])){
 				$cuenta = new Pago();
 				$cuentas = $cuenta->getEstadoCuenta($_SESSION['idusuario']);
+
+				$notificacion = new Notificacion();
+				$notificaciones = $notificacion->getNotificacion($_SESSION['idusuario']);
 
 				$cxc = new CXC();
 				$cxcAll = $cxc->getCxc();

@@ -19,20 +19,20 @@ class CXC{
 
     public function getCxc(){
         $sql = $this->db->query("SELECT cxc.*, mensualidad.descripcion AS mes, apartamentos.nombre AS apto,
-                                                contrato.id_apartamento AS apto, contrato.id_propietario AS propietario
+                                                contrato.id_apartamento AS idApto, contrato.id_propietario AS propietario
                                             FROM cxc
                                                 INNER JOIN mensualidad on cxc.id_mensualidad = mensualidad.id_mensualidad
                                                 INNER JOIN apartamentos on cxc.id_apartamento = apartamentos.id_apartamento
                                                 INNER JOIN contrato on cxc.id_apartamento = contrato.id_apartamento
-                                                WHERE cxc.cancelado != 1 AND contrato.id_propietario =".$_SESSION['idusuario']);
+                                                WHERE contrato.id_propietario =".$_SESSION['idusuario']);
         while($filas = $sql->fetch_assoc()){
             $this->cxc[] = $filas;
         }
         return $this->cxc;
     }
 
-    public function editCxc($id_cxc, $cancelado){
-        $sql = "UPDATE cxc SET cancelado='{$cancelado}'
+    public function editCxc($id_cxc){
+        $sql = "UPDATE cxc SET cancelado=1
                   WHERE id_cxc='{$id_cxc}'";
         return $this->db->query($sql);
     }

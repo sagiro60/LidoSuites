@@ -10,6 +10,12 @@ class Pago{
 		$this->pago=array();
 	}
 
+    public function addPago($id_forma_pago, $id_apartamento, $id_banco, $id_usuario, $monto, $referencia, $aprobado, $descripcion, $fecha){
+        $sql = "INSERT INTO pagos(id_pago, id_forma_pago, id_apartamento, id_banco, id_usuario, monto, referencia, aprobado, descripcion, fecha)VALUES(
+            NULL, '{$id_forma_pago}', '{$id_apartamento}', '{$id_banco}', '{$id_usuario}', '{$monto}', '{$referencia}', '{$aprobado}', '{$descripcion}', '{$fecha}')";
+            return $this->db->query($sql);
+    }
+
     public function getPagos(){
         $sql = $this->db->query("SELECT pagos.*, formas_pagos.descripcion AS forma, 
                                                 bancos.descripcion AS banco, usuarios.*,
