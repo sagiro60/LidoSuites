@@ -1,7 +1,7 @@
 		<ul class="nav nav-tabs nav-justified">
 		  <!-- Nav tabs -->
 		  <ul class="nav nav-tabs" role="tablist">
-		    <li role="presentation" class="active"><a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Detalles proveedor</a></li>
+		    <li role="presentation" class="active"><a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Proveedores</a></li>
 		   	
 		   	<li role="presentation">
 				<div class="input-group input-group-lg">
@@ -26,6 +26,7 @@
 		    			<th>Nombres</th>
 		    			<th>Apellidos</th>
 		    			<th>Correo</th>
+		    			<th>Telefono</th>
 		    			<th>Notas</th>
 		    			<th>Opciones</th>
 		    		</tr>
@@ -35,6 +36,7 @@
 		    			<td><?php echo $rs['nombres']; ?></td>
 		    			<td><?php echo $rs['apellidos']; ?></td>
 		    			<td><?php echo $rs['correo']; ?></td>
+		    			<td><?php echo $rs['telefono']; ?></td>
 		    			<td><?php echo $rs['notas']; ?></td>
 		    			<td>
 		    				<a href="#" onclick="editProveedor(this);" ><i class="glyphicon glyphicon-edit"></i></a>

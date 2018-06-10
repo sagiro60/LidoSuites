@@ -28,28 +28,30 @@ function creaMensualidad(){
         // var iva = subtotal * $('#iva').val() / 100;
         // var total = parseFloat(iva) + parseFloat(subtotal);
 
-    var data = {
+    if($('#descripcionMensualidad').val() != '' && $('#totalGastoOk').val() != '' && $('#fecha').val() != ''){
+        var data = {
         'descripcion' : $('#descripcionMensualidad').val(),
         'total' : $('#totalGastoOk').val(),
         'fecha' : $('#fecha').val(),
         'gastos' : Gasto
     };
 
-    console.log(data);
+        $.ajax({
+            url: "../controllers/mensualidades/addMensualidad.php",
+            type: "post",
+            data: data,
+            success: function (data) {
+               console.log(data); 
+               window.location = '?mensualidad';             
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+               console.log(textStatus, errorThrown);
+            }
 
-    $.ajax({
-        url: "../controllers/mensualidades/addMensualidad.php",
-        type: "post",
-        data: data,
-        success: function (data) {
-           console.log(data); 
-           window.location = '?mensualidad';             
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-           console.log(textStatus, errorThrown);
-        }
-
-    });
+        });
+    }else{
+        alert('Debes tener campos obligatorios vacios, chequa y vuelve a generar la mensualidad!');
+    }
 }
 
 //Insertar repuesto en la Tabla

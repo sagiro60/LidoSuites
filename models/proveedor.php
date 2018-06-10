@@ -11,9 +11,9 @@ class Proveedor{
 	}
 
 	//Metodos CRUD
-	public function addProveedor($nombres, $apellidos, $correo, $notas){
-        $sql = "INSERT INTO proveedores(id_proveedor, nombres, apellidos, correo, notas)VALUES(
-            NULL, '{$nombres}', '{$apellidos}', '{$correo}', '{$notas}')";
+	public function addProveedor($nombres, $apellidos, $correo, $telefono, $notas){
+        $sql = "INSERT INTO proveedores(id_proveedor, nombres, apellidos, correo, telefono, notas)VALUES(
+            NULL, '{$nombres}', '{$apellidos}', '{$correo}', '{$telefono}', '{$notas}')";
             return $this->db->query($sql);
     }
 
@@ -33,8 +33,9 @@ class Proveedor{
         return $this->proveedor;
     } 
 
-    public function editProveedor($id_proveedor, $nombres, $apellidos, $correo, $notas){
-        $sql = "UPDATE proveedores SET nombres='{$nombres}', apellidos='{$apellidos}', correo='{$correo}', notas='{$notas}'
+    public function editProveedor($id_proveedor, $nombres, $apellidos, $correo, $telefono, $notas){
+        $sql = "UPDATE proveedores SET nombres='{$nombres}', apellidos='{$apellidos}', 
+                        correo='{$correo}', telefono='{$telefono}',notas='{$notas}'
                   WHERE id_proveedor='{$id_proveedor}'";
         return $this->db->query($sql);
     }

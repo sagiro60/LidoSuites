@@ -1,7 +1,7 @@
 		<ul class="nav nav-tabs nav-justified">
 		  <!-- Nav tabs -->
 		  <ul class="nav nav-tabs" role="tablist">
-		    <li role="presentation" class="active"><a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Detalles gastos</a></li>
+		    <li role="presentation" class="active"><a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Gastos</a></li>
 		   	
 		   	<li role="presentation">
 				<div class="input-group input-group-lg">
@@ -35,7 +35,15 @@
 		    			<td><?php echo $rs['ut']; ?></td>
 		    			<td><?php echo $rs['descripcion']; ?></td>
 		    			<td><?php echo $rs['monto']; ?></td>
-		    			<td><?php echo $rs['tipo']; ?></td>
+		    			<td>
+		    				<?php if($rs['tipo'] == 1){ ?>
+		    					Ordinario
+		    				<?php }else if($rs['tipo'] == 2){ ?>
+								Alquiler
+		    				<?php }else{ ?>
+		    					Multa
+		    				<?php } ?>
+		    			</td>
 		    			<td>
 		    				<a href="#" onclick="editGasto(this);" ><i class="glyphicon glyphicon-edit"></i></a>
 		    				<a href="#" onclick="delGasto(this);" ><i class="glyphicon glyphicon-trash"></i></a>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 08, 2018 at 04:03 AM
+-- Generation Time: Jun 10, 2018 at 05:57 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.1.17
 
@@ -199,7 +199,35 @@ INSERT INTO `auditorias` (`id_auditoria`, `id_usuario`, `evento`, `tabla`, `crea
 (119, 2, 'Eliminar una mensualidad', 'mensualidad', '2018-06-05 02:22:54'),
 (124, 2, 'Agregar un contrato', 'contrato', '2018-06-05 15:49:08'),
 (125, 2, 'Agregar un contrato', 'contrato', '2018-06-05 15:55:52'),
-(126, 2, 'Agregar un contrato', 'contrato', '2018-06-05 16:03:00');
+(126, 2, 'Agregar un contrato', 'contrato', '2018-06-05 16:03:00'),
+(127, 3, 'cancelar mensualidad', 'cxc', '2018-06-08 04:00:45'),
+(128, 3, 'cancelar mensualidad', 'cxc', '2018-06-08 04:07:33'),
+(129, 3, 'cancelar mensualidad', 'cxc', '2018-06-08 04:09:40'),
+(130, 3, 'cancelar mensualidad', 'cxc', '2018-06-08 04:11:14'),
+(131, 3, 'cancelar mensualidad', 'cxc', '2018-06-08 04:13:04'),
+(132, 3, 'Agregar una notificacion ', 'pagos', '2018-06-08 04:15:12'),
+(133, 3, 'cancelar mensualidad', 'cxc', '2018-06-08 04:15:12'),
+(134, 2, 'Aprobar pago', 'pagos', '2018-06-08 04:17:09'),
+(135, 11, 'cancelar mensualidad', 'cxc', '2018-06-09 00:26:27'),
+(136, 2, 'Agregar una mensualidad', 'mensualidad', '2018-06-10 00:30:00'),
+(137, 2, 'Agregar una cuenta por co', 'cxc', '2018-06-10 00:30:15'),
+(138, 2, 'Agregar una cuenta por co', 'cxc', '2018-06-10 00:30:16'),
+(139, 11, 'Agregar una notificacion ', 'pagos', '2018-06-10 00:39:36'),
+(140, 11, 'cancelar mensualidad', 'cxc', '2018-06-10 00:39:36'),
+(141, 11, 'cancelar mensualidad', 'cxc', '2018-06-10 00:40:14'),
+(142, 3, 'Agregar una notificacion ', 'pagos', '2018-06-10 00:41:22'),
+(143, 3, 'cancelar mensualidad', 'cxc', '2018-06-10 00:41:22'),
+(144, 2, 'Aprobar pago', 'pagos', '2018-06-10 01:48:25'),
+(145, 2, 'Agregar un proveedor', 'proveedores', '2018-06-10 02:51:40'),
+(146, 2, 'Editar un propietario', 'propietarios', '2018-06-10 03:00:20'),
+(147, 2, 'Editar un propietario', 'propietarios', '2018-06-10 03:00:40'),
+(148, 2, 'Editar un propietario', 'propietarios', '2018-06-10 03:01:10'),
+(149, 2, 'Agregar una mensualidad', 'mensualidad', '2018-06-10 03:44:51'),
+(150, 2, 'Eliminar una mensualidad', 'mensualidad', '2018-06-10 03:44:56'),
+(151, 2, 'Agregar una mensualidad', 'mensualidad', '2018-06-10 03:50:17'),
+(152, 2, 'Agregar una cuenta por co', 'cxc', '2018-06-10 03:52:56'),
+(153, 2, 'Agregar una cuenta por co', 'cxc', '2018-06-10 03:52:56'),
+(154, 2, 'Eliminar una mensualidad', 'mensualidad', '2018-06-10 03:56:28');
 
 -- --------------------------------------------------------
 
@@ -266,8 +294,12 @@ CREATE TABLE `cxc` (
 --
 
 INSERT INTO `cxc` (`id_cxc`, `id_apartamento`, `id_alicuota`, `id_mensualidad`, `monto`, `cancelado`, `fecha`, `created`) VALUES
-(5, 5, 1, 15, '7288.25', 0, '2018-06-03', '2018-06-04 02:01:10'),
-(6, 6, 2, 15, '2915.3', 0, '2018-06-03', '2018-06-04 02:01:10');
+(5, 5, 1, 15, '7288.25', 1, '2018-06-03', '2018-06-04 02:01:10'),
+(6, 6, 2, 15, '2915.3', 1, '2018-06-03', '2018-06-04 02:01:10'),
+(7, 5, 1, 16, '8042.75', 0, '2018-07-11', '2018-06-10 00:30:15'),
+(8, 6, 2, 16, '3217.1', 0, '2018-07-11', '2018-06-10 00:30:16'),
+(9, 5, 1, 18, '7065.5', 0, '2018-08-01', '2018-06-10 03:52:56'),
+(10, 6, 2, 18, '2826.2', 0, '2018-08-01', '2018-06-10 03:52:56');
 
 -- --------------------------------------------------------
 
@@ -321,7 +353,10 @@ CREATE TABLE `detalle_mensualidad` (
 INSERT INTO `detalle_mensualidad` (`id_detalle_mensualidad`, `id_mensualidad`, `id_gasto`, `fecha`, `created`) VALUES
 (1, 15, 2, '2018-07-01', '2018-06-04 03:18:04'),
 (2, 15, 3, '2018-07-01', '2018-06-04 03:18:04'),
-(3, 15, 4, '2018-07-01', '2018-06-04 03:18:04');
+(3, 15, 4, '2018-07-01', '2018-06-04 03:18:04'),
+(4, 16, 2, '2018-07-11', '2018-06-10 00:30:00'),
+(5, 16, 3, '2018-07-11', '2018-06-10 00:30:00'),
+(6, 16, 4, '2018-07-11', '2018-06-10 00:30:00');
 
 -- --------------------------------------------------------
 
@@ -377,7 +412,7 @@ CREATE TABLE `gastos` (
 INSERT INTO `gastos` (`id_gasto`, `id_ut`, `descripcion`, `monto`, `tipo`, `created`) VALUES
 (2, 1, 'Bolsas de basura', '60.00', 1, '2018-06-03 00:49:16'),
 (3, 1, 'Gasto de luz', '224.55', 1, '2018-06-03 00:56:27'),
-(4, 1, 'Alquiler', '784.00', 1, '2018-06-03 03:43:44');
+(4, 1, 'Alquiler', '784.00', 2, '2018-06-03 03:43:44');
 
 -- --------------------------------------------------------
 
@@ -399,7 +434,8 @@ CREATE TABLE `mensualidad` (
 --
 
 INSERT INTO `mensualidad` (`id_mensualidad`, `descripcion`, `total`, `fecha`, `tipo`, `created`) VALUES
-(15, 'Junio', '1457.65', '2018-06-03', 1, '2018-06-04 02:00:38');
+(15, 'Junio', '1457.65', '2018-06-03', 1, '2018-06-04 02:00:38'),
+(16, 'Julio', '1608.55', '2018-07-11', 1, '2018-06-10 00:30:00');
 
 -- --------------------------------------------------------
 
@@ -463,6 +499,15 @@ CREATE TABLE `pagos` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
+--
+-- Dumping data for table `pagos`
+--
+
+INSERT INTO `pagos` (`id_pago`, `id_forma_pago`, `id_apartamento`, `id_banco`, `id_usuario`, `monto`, `referencia`, `aprobado`, `descripcion`, `fecha`, `created`) VALUES
+(1, 1, 6, 1, 3, '2915.3', '55544', 1, 'Junio', '2018-06-08', '2018-06-08 04:15:12'),
+(2, 1, 5, 1, 11, '7288.25', '00000000000000000', 0, 'Pago mes junio', '2018-06-09', '2018-06-10 00:39:36'),
+(3, 1, 6, 2, 3, '2915.3', '11111111111111111', 1, 'Pago mes junio', '2018-06-09', '2018-06-10 00:41:22');
+
 -- --------------------------------------------------------
 
 --
@@ -499,7 +544,8 @@ CREATE TABLE `proveedores` (
   `nombres` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `apellidos` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `correo` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
-  `notas` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `telefono` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `notas` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -507,10 +553,8 @@ CREATE TABLE `proveedores` (
 -- Dumping data for table `proveedores`
 --
 
-INSERT INTO `proveedores` (`id_proveedor`, `nombres`, `apellidos`, `correo`, `notas`, `created`) VALUES
-(2, 'Jose', 'Jimenez', 'josej@gmail.com', 'Notas de jose', '2018-05-02 13:49:39'),
-(3, 'Avior', 'Avior', 'avior@avior.com.ve', 'Avior', '2018-05-15 00:24:21'),
-(4, 'PSM', 'PSM', 'psm@psm.edu.ve', 'PSM', '2018-05-15 00:25:15');
+INSERT INTO `proveedores` (`id_proveedor`, `nombres`, `apellidos`, `correo`, `telefono`, `notas`, `created`) VALUES
+(1, 'Satelca', 'Telecomunicaciones', 'satelca@satelca.com.ve', '02812676327', 'Satelca Telecomunicaciones c.a', '2018-06-10 02:51:40');
 
 -- --------------------------------------------------------
 
@@ -715,7 +759,7 @@ ALTER TABLE `apartamentos`
 -- AUTO_INCREMENT for table `auditorias`
 --
 ALTER TABLE `auditorias`
-  MODIFY `id_auditoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
+  MODIFY `id_auditoria` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
 
 --
 -- AUTO_INCREMENT for table `bancos`
@@ -733,7 +777,7 @@ ALTER TABLE `contrato`
 -- AUTO_INCREMENT for table `cxc`
 --
 ALTER TABLE `cxc`
-  MODIFY `id_cxc` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_cxc` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `cxc_has_pago`
@@ -751,7 +795,7 @@ ALTER TABLE `detalle`
 -- AUTO_INCREMENT for table `detalle_mensualidad`
 --
 ALTER TABLE `detalle_mensualidad`
-  MODIFY `id_detalle_mensualidad` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_detalle_mensualidad` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `documentos`
@@ -775,7 +819,7 @@ ALTER TABLE `gastos`
 -- AUTO_INCREMENT for table `mensualidad`
 --
 ALTER TABLE `mensualidad`
-  MODIFY `id_mensualidad` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_mensualidad` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `niveles`
@@ -793,7 +837,7 @@ ALTER TABLE `novedades`
 -- AUTO_INCREMENT for table `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `id_pago` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pago` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `propietarios`
@@ -805,7 +849,7 @@ ALTER TABLE `propietarios`
 -- AUTO_INCREMENT for table `proveedores`
 --
 ALTER TABLE `proveedores`
-  MODIFY `id_proveedor` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_proveedor` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `usuarios`

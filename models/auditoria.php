@@ -25,7 +25,8 @@ class Auditoria{
                                         auditorias.id_auditoria, auditorias.id_usuario,
                                         auditorias.evento, auditorias.tabla, auditorias.created
                                             FROM usuarios
-                                                INNER JOIN auditorias on usuarios.id_usuario = auditorias.id_usuario");
+                                                INNER JOIN auditorias on usuarios.id_usuario = auditorias.id_usuario 
+                                                ORDER BY auditorias.id_auditoria DESC");
         while($filas = $sql->fetch_assoc()){
             $this->auditoria[] = $filas;
         }

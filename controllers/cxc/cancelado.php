@@ -9,5 +9,5 @@ $auditoria = new Auditoria();
 if(!empty($_GET['id'])){
 	$cxc->editCxc($_GET['id']);
 	$auditoria->addAuditoria($_SESSION['idusuario'], 'cancelar mensualidad', 'cxc');
-	//header('Location: ../../pages/?cuenta');
+	header('Location: ../../pages/?cuenta');
 }

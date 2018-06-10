@@ -13,6 +13,14 @@
             <div class="modal-body">
                 <form id="formNuevoPro" action="../controllers/gastos/addGasto.php" method="post">
                     <div class="form-group">
+                        <select name="tipo" class="form-control">
+                            <option value="">Selecciona un tipo</option>
+                            <option value="1">Ordinario</option>
+                            <option value="2">Alquiler</option>
+                            <option value="3">Multa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <select name="id_ut" class="form-control">
                             <option value="">Selecciona una unidad tributaria</option>
                             <?php for($i=0; $i<count($uts); $i++){ $rs = $uts[$i]; ?>
@@ -28,13 +36,6 @@
                     <div class="form-group">
                         <input class="form-control" type="text" id="montoGasto" onkeyup="subTotalGasto(this);" required placeholder="Monto" autocomplete="off">
                         <input type="hidden" name="monto" id="totalGasto">
-                    </div>
-                    <div class="form-group">
-                        <select name="tipo" class="form-control">
-                            <option value="">Selecciona un tipo</option>
-                            <option value="1">Uno</option>
-                            <option value="2">Dos</option>
-                        </select>
                     </div>
                     <input class="btn btn-primary" type="submit" value="Guardar">
                 </form>

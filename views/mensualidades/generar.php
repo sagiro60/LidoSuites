@@ -11,7 +11,7 @@
         <div class="col-xs-8 col-md-8">                 
                  <address>
                     <strong>Descripción</strong><br>
-                        <input type="text" class="form-control" id="descripcionMensualidad" placeholder="Descripción">
+                        <input type="text" class="form-control" id="descripcionMensualidad" placeholder="Descripción del mes">
                     </address>
         </div>
         <div class="pull-right">
@@ -44,7 +44,6 @@
             </div>
             <tr>
                 <td>
-
                 </td>
                 <td></td>
                 <td class="text-right"><strong>Total</strong></td>

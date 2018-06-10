@@ -9,7 +9,7 @@ $auditoria = new Auditoria();
 if(!empty($_POST)){
 	$proveedor->editProveedor($_POST['id_new_proveedor'], $_POST['new_nombres'], 
 								$_POST['new_apellidos'], $_POST['new_correo'],
-								$_POST['new_notas']);
+								$_POST['new_telefono'], $_POST['new_notas']);
 	$auditoria->addAuditoria($_SESSION['idusuario'], 'Editar un propietario', 'propietarios');
-	header('Location: ../../pages/proveedores?get');
+	header('Location: ../../pages/?proveedores');
 }

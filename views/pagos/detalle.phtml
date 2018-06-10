@@ -1,7 +1,7 @@
 		<ul class="nav nav-tabs nav-justified">
 		  <!-- Nav tabs -->
 		  <ul class="nav nav-tabs" role="tablist">
-		    <li role="presentation" class="active"><a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Detalles pagos</a></li>
+		    <li role="presentation" class="active"><a href="!#detalle" aria-controls="detalle" role="tab" data-toggle="tab">Pagos</a></li>
 		   
 		   	<li role="presentation">
 				<div class="input-group input-group-lg">
@@ -15,7 +15,7 @@
 	    		<table class="table table-striped display" id="tablaPagos">
 		    		<tr>
 		    			<th>Id</th>
-		    			<th>Forma</th>
+		    			<!-- <th>Forma</th> -->
 		    			<th>Apartamento</th>
 		    			<th>Banco</th>
 		    			<th>Propietario</th>
@@ -29,7 +29,7 @@
 		    		<?php for($i=0; $i<count($pagos); $i++){ $rs = $pagos[$i]; ?>
 		    		<tr>
 		    			<td><?php echo $rs['id_pago']; ?></td>
-		    			<td><?php echo $rs['forma']; ?></td>
+		    			<!-- <td><?php /*echo $rs['forma']; */?></td> -->
 		    			<td><?php echo $rs['apartamento']; ?></td>
 		    			<td><?php echo $rs['banco']; ?></td>
 		    			<td><?php echo $rs['correo']; ?></td>

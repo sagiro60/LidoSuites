@@ -43,25 +43,27 @@ function procesarMensualidad(index){
     var total = index.parentNode.parentNode.cells[2].textContent;
     var fecha = index.parentNode.parentNode.cells[3].textContent;
 
-    var data = {
-        'id_mensualidad' : id,
-        'total' : total,
-        'fecha' : fecha,
-        'cancelado' : 0
+    if(confirm('Seguro desea procesar la mensualidad')){
+        var data = {
+            'id_mensualidad' : id,
+            'total' : total,
+            'fecha' : fecha,
+            'cancelado' : 0
     };
 
     console.log(`${JSON.stringify(data)}`);
 
-    $.ajax({
-        url: "../controllers/cxc/addCxc.php",
-        type: "post",
-        data: data,
-        success: function (data) {
-           console.log(data); 
-           window.location = '?mensualidad';             
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-           console.log(textStatus, errorThrown);
-        }
-    });
+        $.ajax({
+            url: "../controllers/cxc/addCxc.php",
+            type: "post",
+            data: data,
+            success: function (data) {
+               console.log(data); 
+               window.location = '?mensualidad';             
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+               console.log(textStatus, errorThrown);
+            }
+        });
+    }
 }
