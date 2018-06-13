@@ -49,7 +49,7 @@
 		    				<?php if($rs['cancelado'] != 1){ ?>
 		    					<a href="#" onclick="pagarMensualidad(this);" title="Realizar pago de la mensualidad"><i class="glyphicon glyphicon-thumbs-up"></i></a>
 		    				<?php }else{ ?>
-								<a href="#" title="Ver detalles del pago de la mensualidad"><i class="glyphicon glyphicon-print"></i></a>
+								<a href="../controllers/cxc/recibo?cxc=<?php echo $rs['id_cxc']; ?>" title="Imprimir recibo"><i class="glyphicon glyphicon-print"></i></a>
 		    				<?php } ?>
 		    			</td>
 		    		</tr> <?php } ?>	    		
