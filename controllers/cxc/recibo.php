@@ -5,11 +5,10 @@ require_once '../../models/cxc.php';
 require_once '../../lib/fpdf.php';
 require_once '../../models/auditoria.php';
 
-
 $id = isset($_GET['cxc']) ? $_GET['cxc'] : '';
-$cxc = new Cxc();
+$cxc = new CXC();
 
-$result = $cxc->getPagosId($id);
+$result = $cxc->getCxcId($id);
 for($i=0; $i<count($result); $i++){ $rs = $result[$i]; }
 
 $headingOk = array('Monto', 'Referencia', utf8_decode('Descripción'));
